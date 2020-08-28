@@ -12,7 +12,6 @@ urlpatterns = [
     path('updatetime',views.updatetime,name="updatetime"),
     path('searchRec',views.searchRec,name="searchRec"),
     path('saveuserfeedbackform',views.saveuserfeedbackform,name="saveuserfeedbackform"),
-    path('api',views.api,name='api'),
     path('search',views.search,name="search"),
     path('result',views.result,name='result'),
     path('about',views.about,name='about'),
