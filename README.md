@@ -21,6 +21,8 @@ https://zomsystem.herokuapp.com/updatetime?oldtime=PREVIOUS_OLD_TIME&newtime=UPD
 
 ### An endpoint to view all the tickets for a particular time.
 
+https://zomsystem.herokuapp.com/listall?query=PARTICULAR_TIME
+
 ### An endpoint to delete a particular ticket.
 
 https://zomsystem.herokuapp.com/deleteticket?query=UNIQUEID_OF_TICKET_TO_BE_DELETED
