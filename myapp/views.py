@@ -224,7 +224,7 @@ def result(request):
 
 
 
-def api(request):
+'''def api(request):
     text=request.GET['query'].lower().strip()
     try:
         
@@ -480,13 +480,9 @@ def api(request):
         }
         response = JsonResponse(mydict)
         return response  
-        #return render(request,'404.html')       
+        #return render(request,'404.html')   '''    
 
 
-
-def testresults(request):
-    #return HttpResponse("about")
-    return render(request, 'testresults.html')
         
 
 def about(request):
