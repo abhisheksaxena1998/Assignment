@@ -6,6 +6,7 @@ urlpatterns = [
     path('automated_testing',views.automated_testing,name="automated_testing"),
     path('getuserfeedbackform',views.getuserfeedbackform,name="getuserfeedbackform"),
     path('ticketinfo',views.ticketinfo,name="ticketinfo"),
+    path('showallrecords',views.showallrecords,name="showallrecords"),
     path('deleteticket',views.deleteticket,name="deleteticket"),
     path('listall',views.listall,name="listall"),
     path('timeinfo',views.timeinfo,name="timeinfo"),
