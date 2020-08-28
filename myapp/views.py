@@ -9,6 +9,83 @@ from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from .models import *
 
+def searchRec(request):
+    test = Url.objects.get(name="testname4")
+    print (test.uid)
+    mydict = {
+            "query" : test.pno,
+            "malware" : False,
+            "datetime" : str(datetime.datetime.now())
+        }
+    response = JsonResponse(mydict)
+    return response  
+
+def timeinfo(request):
+    text=request.GET['query']
+    test = Url.objects.get(time=text)
+    print (test.uid)
+    mydict = {
+            "unique_id" : test.pno,
+            "index" : test.index,
+            "name" : test.name,
+            "result" : test.result,
+            "time" : test.time,
+            "phone number" : test.pno,
+            "created_at" :test.created_at
+        }
+    response = JsonResponse(mydict)
+    return response      
+
+def updatetime(request):
+    text=request.GET['oldtime']
+    text2=request.GET['newtime']
+    test = Url.objects.get(time=text)
+    print (test.uid)
+
+    test.time=text2
+    test.save(update_fields=['time'])
+    test = Url.objects.get(time=text2)
+
+    mydict = {
+            "unique_id" : test.pno,
+            "index" : test.index,
+            "name" : test.name,
+            "result" : test.result,
+            "time" : test.time,
+            "phone number" : test.pno,
+            "created_at" :test.created_at
+        }
+    response = JsonResponse(mydict)
+    return response       
+
+def ticketinfo(request):
+    text=request.GET['query']
+    test = Url.objects.get(uid=text)
+    print (test.uid)
+    mydict = {
+            "unique_id" : test.pno,
+            "index" : test.index,
+            "name" : test.name,
+            "result" : test.result,
+            "time" : test.time,
+            "phone number" : test.pno,
+            "created_at" :test.created_at
+        }
+    response = JsonResponse(mydict)
+    return response  
+
+
+def deleteticket(request):
+    text=request.GET['query']
+    test = Url.objects.get(uid=text)
+    print (test.uid)
+    test.delete()
+    mydict = {
+            "status" : "Record deleted successfully!",
+            "time of deletion" : str(datetime.datetime.now())
+        }
+    response = JsonResponse(mydict)
+    return response 
 
 # Create your views here.
 
