@@ -1,5 +1,7 @@
 ## ZOMENTUM HIRING ASSIGNMENT (BACKEND)
 
+https://zomsystem.herokuapp.com/
+
 ### An endpoint to book a ticket using a user’s name, phone number, and timings.
 
 POST REQUEST : 
