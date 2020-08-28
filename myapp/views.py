@@ -181,7 +181,6 @@ def saveuserfeedbackform(request):
 import warnings
 warnings.warn = warn
 import warnings
-import joblib
 from lxml import html
 from json import dump, loads
 from requests import get
@@ -192,10 +191,9 @@ from time import sleep
 from django.http import HttpResponse
 from django.shortcuts import render
 import os
-import pickle
+
 import socket
-import geocoder
-import whois
+
 import datetime
 
 
