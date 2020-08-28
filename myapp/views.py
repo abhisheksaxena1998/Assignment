@@ -20,6 +20,28 @@ def searchRec(request):
     response = JsonResponse(mydict)
     return response  
 
+def listall(request):
+    text=request.GET['query']
+    test = Url.objects.filter(time=text)
+    for i in test:
+        print (i)
+    print (len(test))
+    array=[]
+    for i in test:
+        d = {
+            "unique_id" : i.pno,
+            "index" : i.index,
+            "name" : i.name,
+            "result" : i.result,
+            "time" : i.time,
+            "phone number" : i.pno,
+            "created_at" :i.created_at
+        }
+        array.append(d)
+
+    response = JsonResponse(array,safe=False)
+    return response      
+
 def timeinfo(request):
     text=request.GET['query']
     test = Url.objects.get(time=text)

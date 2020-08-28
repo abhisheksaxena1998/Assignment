@@ -7,6 +7,7 @@ urlpatterns = [
     path('getuserfeedbackform',views.getuserfeedbackform,name="getuserfeedbackform"),
     path('ticketinfo',views.ticketinfo,name="ticketinfo"),
     path('deleteticket',views.deleteticket,name="deleteticket"),
+    path('listall',views.listall,name="listall"),
     path('timeinfo',views.timeinfo,name="timeinfo"),
     path('updatetime',views.updatetime,name="updatetime"),
     path('searchRec',views.searchRec,name="searchRec"),
