@@ -21,7 +21,7 @@ https://zomsystem.herokuapp.com/showallrecords
 
 ### An endpoint to book a ticket using a user’s name, phone number, and timings.
 
-GET REQUEST : https://zomsystem.herokuapp.com/result?uniqueid=NEW_UNIQUE_ID&nm=NEW_NAME&phonenumber=PHONENUMBER&time=TIME
+GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NEW_RECORD&nm=NAME&phonenumber=PHONENUMBER&time=dd/MM/yyyy HH:mm:ss
 
 ![automated testing](/Images/1.png)  
 
