@@ -23,7 +23,7 @@ https://zomsystem.herokuapp.com/showallrecords
 
 GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NEW_RECORD&nm=NAME&phonenumber=PHONENUMBER&time=dd/MM/yyyy HH:mm:ss
 
-![automated testing](/Images/1.png)  
+![automated testing](/Images/alter1.png)  
 
     This accepts a ‘unique_id’, ‘Name’, ‘Phone number’ and ‘time’ for which ticket is to be booked, a 
     ‘created_at’ entry is automatically stored in database which stores the time when request to add a
@@ -31,7 +31,7 @@ GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NE
 
 Showing all records : https://zomsystem.herokuapp.com/showallrecords
 
-![automated testing](/Images/2.png)  
+![automated testing](/Images/alter2.png)  
 
     All records are displayed to denote the insertion of a record.
 
@@ -43,7 +43,7 @@ POST REQUEST :
     r = requests.post("https://zomsystem.herokuapp.com/automated_testing",files=files)
     # 'one.txt' is Text File containing records.
 
-![automated testing](/Images/onetext.png)  
+![automated testing](/Images/altertext.png)  
 
 ![automated testing](/Images/multiplepostrecords.png)  
 
@@ -52,17 +52,17 @@ POST REQUEST :
 
 Showing all inserted records using POST: https://zomsystem.herokuapp.com/showallrecords
 
-![automated testing](/Images/4.png)  
+![automated testing](/Images/alter4.png)  
 
     Shown here are multiple inserted records using automated POST request.
 
 ### For a particular timing, a maximum of 20 tickets can be booked.
 
-![automated testing](/Images/20full.png)  
+![automated testing](/Images/alter17.png)  
 
     GET API ensures that for a particular timing, a maximum of 20 tickets can be booked.
 
-![automated testing](/Images/20limitxceeded.png) 
+![automated testing](/Images/alter16.png) 
 
     An instance is shown through POSTMAN, that when records exceed 20 for a particular time they are rejected.
 
@@ -70,13 +70,13 @@ Showing all inserted records using POST: https://zomsystem.herokuapp.com/showall
 
 https://zomsystem.herokuapp.com/updatetime?oldtime=PREVIOUS_OLD_TIME&newtime=UPDATED_TIME
 
-![automated testing](/Images/5.png)  
+![automated testing](/Images/alter19.png)  
 
     Here shown the endpoint that accepts a previous time and updated time, to update time entry.
 
 Showing all records: https://zomsystem.herokuapp.com/showallrecords
 
-![automated testing](/Images/6.png)  
+![automated testing](/Images/alter21.png)  
 
     Shown all records after updating
 
@@ -84,7 +84,7 @@ Showing all records: https://zomsystem.herokuapp.com/showallrecords
 
 https://zomsystem.herokuapp.com/listall?query=PARTICULAR_TIME
 
-![automated testing](/Images/7.png)  
+![automated testing](/Images/alter22.png)  
 
     This is the instance that shows information of tickets booked for a particular time.
 
@@ -100,21 +100,20 @@ https://zomsystem.herokuapp.com/deleteticket?query=UNIQUEID_OF_TICKET_TO_BE_DELE
 
 https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
 
-![automated testing](/Images/9.png)  
+![automated testing](/Images/alter23.png)  
 
     Shown here the example, that is used to view users’ detail for a ticket id.
 
 ### Mark a ticket as expired if there is a diff of 8 hours between the ticket timing and current time.
 
-![automated testing](/Images/8hrold.png)
+![automated testing](/Images/alter24.png)
 
-![automated testing](/Images/autodel.png)  
+![automated testing](/Images/alter25.png)  
 
     In this example:
     a.	A request is made to add a new record that has a longer difference than 8 hours
     b.	From postman it is clear that record is added successfully
     c.	However, a function is invoked automatically in all the endpoints that automatically deletes 
             entries with difference greater than 8 hours.
-
-
-
+            
+![automated testing](/Images/alterfinal.png)             
