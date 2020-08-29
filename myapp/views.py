@@ -36,6 +36,7 @@ def deleteTime():
     return 1
 
 def listall(request):
+    deleteTime()
     text=request.GET['query']
     test = Url.objects.filter(time=text)
     for i in test:
@@ -81,6 +82,7 @@ def showallrecords(request):
 
 
 def timeinfo(request):
+    deleteTime()
     text=request.GET['query']
     test = Url.objects.get(time=text)
     print (test.uid)
@@ -97,6 +99,7 @@ def timeinfo(request):
     return response      
 
 def updatetime(request):
+    deleteTime()
     text=request.GET['oldtime']
     text2=request.GET['newtime']
     test = Url.objects.get(time=text)
@@ -119,6 +122,7 @@ def updatetime(request):
     return response       
 
 def ticketinfo(request):
+    deleteTime()
     text=request.GET['query']
     test = Url.objects.get(uid=text)
     print (test.uid)
@@ -136,6 +140,7 @@ def ticketinfo(request):
 
 
 def deleteticket(request):
+    deleteTime()
     text=request.GET['query']
     test = Url.objects.get(uid=text)
     print (test.uid)
@@ -150,7 +155,7 @@ def deleteticket(request):
 # Create your views here.
 
 def automated_testing(request):
-    
+    deleteTime()
     import re
     import json
     import requests
@@ -235,6 +240,7 @@ import socket
 import datetime
 
 def addRecord(request):
+    deleteTime()
     text=request.GET['nm'].strip()
     result="booked"
     uid=request.GET['uniqueid']
@@ -276,6 +282,7 @@ def addRecord(request):
 
 
 def result(request):
+    deleteTime()
     text=request.GET['nm'].strip()
 
     result="booked"
@@ -297,13 +304,6 @@ def result(request):
     obj.save()
     return geturlhistory(request)
         
-
-def about(request):
-    #return HttpResponse("about")
-    try:
-        return render(request, 'about.html')
-    except:
-        return render(request, 'about.html')
     
 def geturlhistory(request):
     
