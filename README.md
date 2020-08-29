@@ -2,6 +2,10 @@
 
 https://zomsystem.herokuapp.com/
 
+### Endpoint to view all records. (JSON)
+
+https://zomsystem.herokuapp.com/showallrecords
+
 ### An endpoint to book a ticket using a user’s name, phone number, and timings.
 
 POST REQUEST : 
