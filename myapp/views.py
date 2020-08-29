@@ -252,7 +252,7 @@ def addRecord(request):
     for i in test:
         if i.time==time:
             count+=1
-    if count<20:        
+    if count<=20:        
         #bookedat=str(datetime.datetime.now())
         obj = Url()
         obj.result = result            
