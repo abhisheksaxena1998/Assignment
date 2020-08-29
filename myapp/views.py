@@ -69,7 +69,7 @@ def timeinfo(request):
     test = Url.objects.get(time=text)
     print (test.uid)
     mydict = {
-            "unique_id" : test.pno,
+            "unique_id" : test.uid,
             "index" : test.index,
             "name" : test.name,
             "result" : test.result,
@@ -91,7 +91,7 @@ def updatetime(request):
     test = Url.objects.get(time=text2)
 
     mydict = {
-            "unique_id" : test.pno,
+            "unique_id" : test.uid,
             "index" : test.index,
             "name" : test.name,
             "result" : test.result,
@@ -107,7 +107,7 @@ def ticketinfo(request):
     test = Url.objects.get(uid=text)
     print (test.uid)
     mydict = {
-            "unique_id" : test.pno,
+            "unique_id" : test.uid,
             "index" : test.index,
             "name" : test.name,
             "result" : test.result,
