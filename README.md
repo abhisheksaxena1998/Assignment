@@ -24,7 +24,8 @@ GET REQUEST : https://zomsystem.herokuapp.com/result?uniqueid=NEW_UNIQUE_ID&nm=N
 
 ![automated testing](/Images/1.png)  
 
-    This accepts a ‘unique_id’, ‘Name’, ‘Phone number’ and ‘time’ for which ticket is to be booked, a ‘created_at’ entry is automatically stored in database which stores the time when request to add a new record is generated
+    This accepts a ‘unique_id’, ‘Name’, ‘Phone number’ and ‘time’ for which ticket is to be booked, a ‘created_at’ entry
+    is automatically stored in database which stores the time when request to add a new record is generated
 
 Showing all records : https://zomsystem.herokuapp.com/showallrecords
 
@@ -43,7 +44,8 @@ POST REQUEST :
 
 ![automated testing](/Images/multiplepostrecords.png)  
 
-    We can send an automated POST request to the end point with a .txt file which contains records as shown to add multiple records at a time easily through a POST request.
+    We can send an automated POST request to the end point with a .txt file which contains records as shown to add 
+    multiple records at a time easily through a POST request.
 
 Showing all inserted records using POST: https://zomsystem.herokuapp.com/showallrecords
 
@@ -106,9 +108,10 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
 ![automated testing](/Images/autodel.png)  
 
     In this example:
-    a.	 A request is made to add a new record that has a longer difference than 8 hours
+    a.	A request is made to add a new record that has a longer difference than 8 hours
     b.	From postman it is clear that record is added successfully
-    c.	However, a function is invoked automatically in all the endpoints that automatically deletes entries with difference greater than 8 hours.
+    c.	However, a function is invoked automatically in all the endpoints that automatically deletes entries with 
+        difference greater than 8 hours.
 
 
 
