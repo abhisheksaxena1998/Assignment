@@ -14,7 +14,7 @@ def searchRec(request):
     print (test.uid)
     mydict = {
             "query" : test.pno,
-            "malware" : False,
+            "m" : False,
             "datetime" : str(datetime.datetime.now())
         }
     response = JsonResponse(mydict)
@@ -218,6 +218,46 @@ import socket
 
 import datetime
 
+def addRecord(request):
+    text=request.GET['nm'].strip()
+    result="booked"
+    uid=request.GET['uniqueid']
+    pno=request.GET['phonenumber']
+    time=request.GET['time']
+    name=text
+    count=0
+    test=Url.objects.all()
+    for i in test:
+        if i.time==time:
+            count+=1
+    if count<20:        
+        #bookedat=str(datetime.datetime.now())
+        obj = Url()
+        obj.result = result            
+        tags = [text,uid,pno,time]
+        tags = list(filter(lambda x: x!="Not Found",tags))
+        tags.append(text)
+        obj.uid = uid
+        obj.pno = pno
+        obj.time = time
+        obj.name=name
+        #obj.bookedat=str(datetime.datetime.now())    
+        obj.save()
+        mydict = {
+            "status" : "Record added successfully!"       
+        }
+        response = JsonResponse(mydict)
+        return response     
+        
+    else:
+        mydict = {
+            "status" : "Record can't be added!",
+            "error_message" : "Record exceeded '20' limit!"
+        }
+        response = JsonResponse(mydict)
+        return response 
+
+
 
 def result(request):
     text=request.GET['nm'].strip()
@@ -240,269 +280,6 @@ def result(request):
     #obj.bookedat=str(datetime.datetime.now())    
     obj.save()
     return geturlhistory(request)
-
-
-
-
-'''def api(request):
-    text=request.GET['query'].lower().strip()
-    try:
-        
-        import datetime
-
-        if text.startswith('https://mudvfinalradar.eu-gb.cf.appdomain.cloud/'):
-            import datetime
-            mydict = {
-                "query" : text,
-                "malware" : False,
-                "datetime" : str(datetime.datetime.now())
-            }
-            response = JsonResponse(mydict)
-            return response   
-
-        if text.startswith('https://www.google.com/search?q='):
-            import datetime
-            mydict = {
-                "query" : text,
-                "malware" : False,
-                "datetime" : str(datetime.datetime.now())
-            }
-            response = JsonResponse(mydict)
-            return response    
-
-
-        #if (text.startswith('https://www.google.com/search?q=')==False) :
-
-        else:
-        
-            if text.startswith('https://') or text.startswith('http://'):
-                import tldextract
-                do=tldextract.extract(text).domain
-                sdo=tldextract.extract(text).subdomain
-                suf=tldextract.extract(text).suffix
-
-                if len(text)<=9:
-                    return render(request,'errorpage.html')
-                aburl=-1
-                digits="0123456789"
-                if text[8] in digits:
-                    oneval=-1
-                else:
-                    oneval=1    
-                if len(text)>170:
-                    secval=-1
-                else:
-                    secval=1  
-                if "@" in text:
-                    thirdval=-1
-                else:
-                    thirdval=1    
-                k=text.count("//")          
-                if k>1:
-                    fourthval=-1
-                else:
-                    fourthval=1
-                    
-                if "-" in do or "-" in sdo:
-                    fifthval=-1
-                else:
-                    fifthval=1         
-                if "https" in text:
-                    sixthval=1
-                else:
-                    sixthval=-1
-                temp=text
-                temp=temp[6:]
-                k1=temp.count("https")
-
-                if k1 >=1:
-                    seventhval=-1
-                else:
-                    seventhval=1
-                if "about:blank" in text:
-                    eighthval=-1
-                else:
-                    eighthval=1
-                if "mail()" or "mailto:" in text:
-                    ninthval=-1
-                else:
-                    ninthval=1
-                re=text.count("//")          
-                if re>3:
-                    tenthval=-1
-                else:
-                    tenthval=1    
-
-                import whois
-                from datetime import datetime
-
-                url=text
-
-                d=0
-                try:
-                    res=whois.whois(url)
-                except:
-                    #print("getaddrerrror DNE")
-                    d=-1
-                    name="Not found in database"
-                    org="Not found in database"
-                    add="Not found in database"
-                    city="Not found in database"
-                    state="Not found in database"
-                    ziip="Not found in database"
-                    country="Not found in database"
-                    emails="Not found in database"
-                    dom="Not Found"
-                if d!=-1:    
-                    try:
-                        if len(res.creation_date)>1:
-                            a=res['creation_date'][0]
-                            b=datetime.now()
-                            c=b-a
-                            d=c.days
-                    except:
-                        a=res['creation_date']
-                        b=datetime.now()
-                        c=b-a
-                        d=c.days
-                """except:
-                    print("getaddrerrror DNE")
-                    d=0"""
-
-
-                
-
-                if d>365:
-                    eleventhval=1
-                    aburl=1
-                elif d<=365:
-                    eleventhval=-1
-                    aburl=-1
-                    var11="Domain age working less than a year"
-        
-     
-
-
-
-                if aburl==-1:
-                    twelthval=-1
-                else:
-                    twelthval=1                 
-                import urllib.request, sys, re
-                import xmltodict, json
-                rank=-1
-                try:
-                    xml = urllib.request.urlopen('http://data.alexa.com/data?cli=10&dat=s&url={}'.format(text)).read()
-
-                    result= xmltodict.parse(xml)
-
-                    data = json.dumps(result).replace("@","")
-                    data_tojson = json.loads(data)
-                    url = data_tojson["ALEXA"]["SD"][1]["POPULARITY"]["URL"]
-                    rank= int(data_tojson["ALEXA"]["SD"][1]["POPULARITY"]["TEXT"])
-                    #print ("rank",rank)
-                    if rank<=150000:
-                        thirt=1
-                    else:
-                        thirt=-1
-                    #print (thirt)    
-                except:
-                    thirt=-1 
-                    rank=-1
-                    #rank="Not Indexed by Alexa"
-                    #print (rank)                  
-
-
-
-
-                filename = 'phish_trainedv7mud0.001.sav'
-
-                loaded_model = joblib.load(filename)
-
-                arg=loaded_model.predict(([[oneval,secval,thirdval,fourthval,fifthval,seventhval,eighthval,ninthval,tenthval,eleventhval,twelthval,thirt]]))
-                #print (arg[0])
-                import whois
-                url=text
-                
-                #print (res)
-                if (d!=-1):
-                    name=res.domain_name
-                    #print (res.domain_name)
-                    org=res.org
-                    #print (res.org)
-                    add=res.address
-                    #print (res.address)
-                    city=res.city
-                    #print (res.city)
-                    state=res.state
-                    #print (res.state)
-                    ziip=res.zipcode
-                    #print (res.zipcode)
-                    country=res.country
-                    #print (res.country)
-                    emails=res.emails
-                    #print (res.emails)
-                    dom=res.domain_name
-                    #print (res.domain_name)                
-                else:
-                    name="Not found in database"
-                    org="Not found in database"
-                    add="Not found in database"
-                    city="Not found in database"
-                    state="Not found in database"
-                    ziip="Not found in database"
-                    country="Not found in database"
-                    emails="Not found in database"
-                    dom="Not Found"
-
-                
-                    
-
-                if aburl==-1 and rank==-1 :
-                    arg[0]=-1
-                    #phishing
-
-                if arg[0]==1:
-                    te="Legitimate"
-                else:
-                    te="Malicious"  
-                if arg[0] == 1:
-                    mal = True
-                else:
-                    mal = False      
-
-
-                if arg[0] == 1:
-                    malstatus = False
-                else:
-                    malstatus = True                 
-                from json.encoder import JSONEncoder
-                final_entity = { "predicted_argument": [int(arg[0])]}
-
-            import datetime
-            mydict = {
-                "query" : url,
-                "malware" : malstatus,
-                "datetime" : str(datetime.datetime.now())
-            }
-            response = JsonResponse(mydict)
-            return response
-
-                
-
-    except:
-        text=request.GET['query']
-        import datetime
-        mydict = {
-            "query" : text,
-            "malware" : False,
-            "datetime" : str(datetime.datetime.now())
-        }
-        response = JsonResponse(mydict)
-        return response  
-        #return render(request,'404.html')   '''    
-
-
         
 
 def about(request):
