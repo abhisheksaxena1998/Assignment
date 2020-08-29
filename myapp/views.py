@@ -158,7 +158,7 @@ def automated_testing(request):
                 tags = [text,uid,pno,time]
                 tags = list(filter(lambda x: x!="Not Found",tags))
                 tags.append(text)
-                obj.uid = text
+                obj.uid = uid
                 obj.pno = pno
                 obj.time = time
                 obj.name=name
@@ -223,9 +223,9 @@ def result(request):
     text=request.GET['nm'].strip()
 
     result="booked"
-    uid=request.GET['uniqueid'].lower().strip()
-    pno=request.GET['phonenumber'].lower().strip()
-    time=request.GET['time'].lower().strip()
+    uid=request.GET['uniqueid']
+    pno=request.GET['phonenumber']
+    time=request.GET['time']
     name=text
     #bookedat=str(datetime.datetime.now())
     obj = Url()
@@ -233,7 +233,7 @@ def result(request):
     tags = [text,uid,pno,time]
     tags = list(filter(lambda x: x!="Not Found",tags))
     tags.append(text)
-    obj.uid = text
+    obj.uid = uid
     obj.pno = pno
     obj.time = time
     obj.name=name
