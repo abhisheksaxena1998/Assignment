@@ -24,8 +24,9 @@ GET REQUEST : https://zomsystem.herokuapp.com/result?uniqueid=NEW_UNIQUE_ID&nm=N
 
 ![automated testing](/Images/1.png)  
 
-    This accepts a ‘unique_id’, ‘Name’, ‘Phone number’ and ‘time’ for which ticket is to be booked, a ‘created_at’ entry
-    is automatically stored in database which stores the time when request to add a new record is generated
+    This accepts a ‘unique_id’, ‘Name’, ‘Phone number’ and ‘time’ for which ticket is to be booked, a 
+    ‘created_at’ entry is automatically stored in database which stores the time when request to add a
+    new record is generated
 
 Showing all records : https://zomsystem.herokuapp.com/showallrecords
 
@@ -38,7 +39,7 @@ POST REQUEST :
     import requests
     
     files = {'upload_file': open('one.txt','rb')}
-    r = requests.post("https://zomsystem.herokuapp.com/automated_testing", files=files) # Text File containing records.
+    r = requests.post("https://zomsystem.herokuapp.com/automated_testing",files=files)#Text File containing records.
 
 ![automated testing](/Images/onetext.png)  
 
