@@ -2,6 +2,8 @@
 
 https://zomsystem.herokuapp.com/
 
+![automated testing](/Images/11.png)  
+
 ### Endpoint to view all records. (JSON)
 
 https://zomsystem.herokuapp.com/showallrecords
