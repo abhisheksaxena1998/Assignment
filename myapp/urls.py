@@ -2,9 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('',views.deleteTime,name='index'),
     path('automated_testing',views.automated_testing,name="automated_testing"),
     path('getuserfeedbackform',views.getuserfeedbackform,name="getuserfeedbackform"),
+    path('deleteTime',views.deleteTime,name="deleteTime"),
     path('addRecord',views.addRecord,name="addRecord"),
     path('ticketinfo',views.ticketinfo,name="ticketinfo"),
     path('showallrecords',views.showallrecords,name="showallrecords"),

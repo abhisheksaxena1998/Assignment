@@ -20,6 +20,21 @@ def searchRec(request):
     response = JsonResponse(mydict)
     return response  
 
+def deleteTime(request):
+    now=datetime.datetime.now()
+    test = Url.objects.all()
+    for i in test:
+        text=datetime.datetime.strptime(i.time,'%d/%m/%Y %H:%M:%S')
+        if (now-text).total_seconds()//3600>=8:
+            todel = Url.objects.get(uid=i.uid)
+            todel.delete()
+    mydict = {
+            "status" : "Record deleted successfully!",
+            "time of deletion" : str(datetime.datetime.now())
+        }
+    response = JsonResponse(mydict)
+    return render(request, 'index.html')
+
 def listall(request):
     text=request.GET['query']
     test = Url.objects.filter(time=text)
