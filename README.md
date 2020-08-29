@@ -16,7 +16,7 @@ GET REQUEST : https://zomsystem.herokuapp.com/result?uniqueid=NEW_UNIQUE_ID&nm=N
 
 ![automated testing](/Images/1.png)  
 
-Showing all records :
+Showing all records : https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/2.png)  
 
@@ -32,7 +32,7 @@ POST REQUEST :
 
 ![automated testing](/Images/multiplepostrecords.png)  
 
-Showing all inserted records using POST:
+Showing all inserted records using POST: https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/4.png)  
 
@@ -42,7 +42,7 @@ https://zomsystem.herokuapp.com/updatetime?oldtime=PREVIOUS_OLD_TIME&newtime=UPD
 
 ![automated testing](/Images/5.png)  
 
-Showing all records:
+Showing all records: https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/6.png)  
 
