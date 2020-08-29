@@ -16,7 +16,8 @@ https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/beforeinsertion.png)  
 
-    This is the start state when there are no records. Purpose of /showallrecords is to display all records to infer changes made using APIs.
+    This is the start state when there are no records. Purpose of /showallrecords is to display all 
+    records to infer changes made using APIs.
 
 ### An endpoint to book a ticket using a user’s name, phone number, and timings.
 
@@ -112,8 +113,8 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
     In this example:
     a.	A request is made to add a new record that has a longer difference than 8 hours
     b.	From postman it is clear that record is added successfully
-    c.	However, a function is invoked automatically in all the endpoints that automatically deletes entries with 
-        difference greater than 8 hours.
+    c.	However, a function is invoked automatically in all the endpoints that automatically deletes 
+        entries with difference greater than 8 hours.
 
 
 
