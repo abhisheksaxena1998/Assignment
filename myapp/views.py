@@ -29,7 +29,7 @@ def listall(request):
     array=[]
     for i in test:
         d = {
-            "unique_id" : i.pno,
+            "unique_id" : i.uid,
             "index" : i.index,
             "name" : i.name,
             "result" : i.result,
