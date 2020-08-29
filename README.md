@@ -60,7 +60,7 @@ https://zomsystem.herokuapp.com/deleteticket?query=UNIQUEID_OF_TICKET_TO_BE_DELE
 
 https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
 
-
+![automated testing](/Images/9.png)  
 
 ### Mark a ticket as expired if there is a diff of 8 hours between the ticket timing and current
 time.
