@@ -114,7 +114,7 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
     a.	A request is made to add a new record that has a longer difference than 8 hours
     b.	From postman it is clear that record is added successfully
     c.	However, a function is invoked automatically in all the endpoints that automatically deletes 
-        entries with difference greater than 8 hours.
+            entries with difference greater than 8 hours.
 
 
 
