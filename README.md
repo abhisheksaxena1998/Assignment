@@ -36,6 +36,12 @@ Showing all inserted records using POST: https://zomsystem.herokuapp.com/showall
 
 ![automated testing](/Images/4.png)  
 
+### For a particular timing, a maximum of 20 tickets can be booked.
+
+![automated testing](/Images/20full.png)  
+
+![automated testing](/Images/20limitxceeded.png)  
+
 ### An endpoint to update a ticket timing.
 
 https://zomsystem.herokuapp.com/updatetime?oldtime=PREVIOUS_OLD_TIME&newtime=UPDATED_TIME
