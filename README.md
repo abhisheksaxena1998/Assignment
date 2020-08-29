@@ -108,6 +108,9 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
 
 ![automated testing](/Images/alter24.png)
 
+    Since, there is difference of 8 hours between present and other time (the one added here), 
+    it will be deleted automatically
+
 ![automated testing](/Images/alter25.png)  
 
     In this example:
