@@ -4,6 +4,12 @@ https://zomsystem.herokuapp.com/
 
 ![automated testing](/Images/11.png)  
 
+### Input format
+
+![automated testing](/Images/format.png)  
+
+    Time should be in format *dd/MM/yyyy HH:mm:ss*
+
 ### Endpoint to view all records. (JSON)
 
 https://zomsystem.herokuapp.com/showallrecords
