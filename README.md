@@ -39,14 +39,15 @@ POST REQUEST :
     import requests
     
     files = {'upload_file': open('one.txt','rb')}
-    r = requests.post("https://zomsystem.herokuapp.com/automated_testing",files=files)#Text File containing records.
+    r = requests.post("https://zomsystem.herokuapp.com/automated_testing",files=files)
+    # 'one.txt' is Text File containing records.
 
 ![automated testing](/Images/onetext.png)  
 
 ![automated testing](/Images/multiplepostrecords.png)  
 
-    We can send an automated POST request to the end point with a .txt file which contains records as shown to add 
-    multiple records at a time easily through a POST request.
+    We can send an automated POST request to the end point with a .txt file which contains records as 
+    shown to add multiple records at a time easily through a POST request.
 
 Showing all inserted records using POST: https://zomsystem.herokuapp.com/showallrecords
 
