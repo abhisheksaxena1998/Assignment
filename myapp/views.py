@@ -20,7 +20,7 @@ def searchRec(request):
     response = JsonResponse(mydict)
     return response  
 
-def deleteTime(request):
+def deleteTime():
     now=datetime.datetime.now()
     test = Url.objects.all()
     for i in test:
@@ -33,7 +33,7 @@ def deleteTime(request):
             "time of deletion" : str(datetime.datetime.now())
         }
     response = JsonResponse(mydict)
-    return render(request, 'index.html')
+    return 1
 
 def listall(request):
     text=request.GET['query']
@@ -58,6 +58,7 @@ def listall(request):
     return response      
 
 def showallrecords(request):
+    deleteTime()
     test = Url.objects.all()
     for i in test:
         print (i)
