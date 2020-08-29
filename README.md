@@ -10,6 +10,8 @@ https://zomsystem.herokuapp.com/
 
     Time should be in format *dd/MM/yyyy HH:mm:ss*
 
+## Endpoints usage with POSTMAN snaps.
+
 ### Endpoint to view all records. (JSON)
 
 https://zomsystem.herokuapp.com/showallrecords
