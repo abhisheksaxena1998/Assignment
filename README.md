@@ -21,7 +21,7 @@ https://zomsystem.herokuapp.com/showallrecords
 
 ### An endpoint to book a ticket using a user’s name, phone number, and timings.
 
-GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NEW_RECORD&nm=NAME&phonenumber=PHONENUMBER&time=dd/MM/yyyy HH:mm:ss
+GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NEW_RECORD&nm=NAME&phonenumber=PHONENUMBER&time= dd/MM/yyyy HH:mm:ss
 
 ![automated testing](/Images/alter1.png)  
 
@@ -115,5 +115,7 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
     b.	From postman it is clear that record is added successfully
     c.	However, a function is invoked automatically in all the endpoints that automatically deletes 
             entries with difference greater than 8 hours.
-            
+
+### Final records after all operations
+
 ![automated testing](/Images/alterfinal.png)             
