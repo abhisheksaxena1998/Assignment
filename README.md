@@ -23,7 +23,7 @@ https://zomsystem.herokuapp.com/
 
 ![automated testing](/Images/format.png)  
 
-    Time should be in format *dd/MM/yyyy HH:mm:ss*
+    Time should be in format dd/MM/yyyy HH:mm:ss
 
 ## Endpoints usage with POSTMAN snaps.
 
