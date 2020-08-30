@@ -149,6 +149,10 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
     b.	From postman it is clear that record is added successfully
     c.	However, a function is invoked automatically in all the endpoints that automatically deletes 
             entries with difference greater than 8 hours.
+            
+![automated testing](/Images/automateddeletion.png)  
+
+    Snapshot of function invoked in endpoints to automate deletions.           
 
 ### Final records after all operations
 
