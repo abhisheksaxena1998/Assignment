@@ -94,6 +94,10 @@ https://zomsystem.herokuapp.com/updatetime?oldtime=PREVIOUS_OLD_TIME&newtime=UPD
 ![automated testing](/Images/alter19.png)  
 
     Here shown the endpoint that accepts a previous time and updated time, to update time entry.
+    
+![automated testing](/Images/updatetime.png) 
+
+    If the matching query is not found then an error message is returned by API.
 
 *Showing all records:* https://zomsystem.herokuapp.com/showallrecords
 
@@ -116,6 +120,10 @@ https://zomsystem.herokuapp.com/deleteticket?query=UNIQUEID_OF_TICKET_TO_BE_DELE
 ![automated testing](/Images/8.png)  
 
     Endpoint to delete a particular ticket that accepts unique id of ticket to be deleted
+    
+![automated testing](/Images/deleteticket.png)
+
+        If the matching query is not found then an error message is returned by API. 
 
 ### An endpoint to view the user’s details based on the ticket id.
 
