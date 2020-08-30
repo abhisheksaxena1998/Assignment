@@ -20,7 +20,7 @@ def searchRec(request):
     response = JsonResponse(mydict)
     return response  
 
-def deleteTime():
+def deleteTime():   # Function to delete all the tickets which are expired automatically.
     now=datetime.datetime.now()
     test = Url.objects.all()
     for i in test:
@@ -36,7 +36,7 @@ def deleteTime():
     return 1
 
 def listall(request):
-    deleteTime()
+    deleteTime()    # Function to delete all the tickets which are expired automatically is called in every endpoint for automated deletion 
     text=request.GET['query']
     test = Url.objects.filter(time=text)
     for i in test:
