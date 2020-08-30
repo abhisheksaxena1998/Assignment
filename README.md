@@ -4,6 +4,21 @@ https://zomsystem.herokuapp.com/
 
 ![automated testing](/Images/11.png)  
 
+### Business cases supported by REST APIs:
+
+    ● An endpoint to book a ticket using a user’s name, phone number, and timings.
+    ● An endpoint to update a ticket timing.
+    ● An endpoint to view all the tickets for a particular time.
+    ● An endpoint to delete a particular ticket.
+    ● An endpoint to view the user’s details based on the ticket id.
+    ● Mark a ticket as expired if there is a difference of 8 hours between the ticket timing 
+      and current time.
+    ● All the tickets which are expired automatically deleted.  
+    ● For a particular timing, a maximum of 20 tickets can be booked.
+    ● REST paradigm implemented.
+    ● SQLite database used.
+    ● POSTMAN snaps of all APIs attached in README.
+
 ### Input format
 
 ![automated testing](/Images/format.png)  
