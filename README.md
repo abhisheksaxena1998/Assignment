@@ -24,20 +24,23 @@ Python, Django(Framework), SQLite database, Heroku (for deployment)
     ● POSTMAN snaps of all APIs attached in README.
 
 ### Input format
+***************************
 
 ![automated testing](/Images/format.png)  
 
 | Field Name   | Description |           
 |----------|:-------------:|
 | unique_id |  Unique customer ID | 
-| index |    Number of records(auto incremented)   | 
+| index |    Number of records (auto incremented)   | 
 | name | Customer's name |   
 | time | Start time of movie |   
 | phone number | Customer's phone number |   
 | created_at | Time when ticket is created (automatically attached) |   
 
     Time should be in format dd/MM/yyyy HH:mm:ss
-
+    
+***************************
+    
 ## Endpoints usage with POSTMAN snaps.
 
 ### Endpoint to view all records. (JSON)
