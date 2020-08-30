@@ -133,12 +133,14 @@ https://zomsystem.herokuapp.com/ticketinfo?query=TICKETID
 
     Shown here the example, that is used to view users’ detail for a ticket id.
 
-### Mark a ticket as expired if there is a diff of 8 hours between the ticket timing and current time.
+### Mark a ticket as expired if there is a difference of 8 hours between the ticket timing and current time.
 
 ![automated testing](/Images/alter24.png)
 
     Since, there is difference of 8 hours between present and other time (the one added here), 
-    it will be deleted automatically
+    it will be deleted automatically. For automatic deletion, a function is called when every 
+    endpoint is executed (API is called) which checks time of every ticket entity and deletes
+    the record which has difference greater than equal to 8 hours.
 
 ![automated testing](/Images/alter25.png)  
 
