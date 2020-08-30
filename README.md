@@ -6,7 +6,7 @@ https://zomsystem.herokuapp.com/
 
 **TECH STACK**
 
-Python, Django(Framework), Heroku (for deployment)
+Python, Django(Framework), SQLite database, Heroku (for deployment)
 
 ### Business cases supported by REST APIs:
 
