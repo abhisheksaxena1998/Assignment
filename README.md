@@ -4,11 +4,26 @@ https://zomsystem.herokuapp.com/
 
 ![automated testing](/Images/11.png)  
 
+### Business cases supported by REST APIs:
+
+    ● An endpoint to book a ticket using a user’s name, phone number, and timings.
+    ● An endpoint to update a ticket timing.
+    ● An endpoint to view all the tickets for a particular time.
+    ● An endpoint to delete a particular ticket.
+    ● An endpoint to view the user’s details based on the ticket id.
+    ● Mark a ticket as expired if there is a difference of 8 hours between the ticket timing 
+      and current time.
+    ● All the tickets which are expired automatically deleted.  
+    ● For a particular timing, a maximum of 20 tickets can be booked.
+    ● REST paradigm implemented.
+    ● SQLite database used.
+    ● POSTMAN snaps of all APIs attached in README.
+
 ### Input format
 
 ![automated testing](/Images/format.png)  
 
-    Time should be in format *dd/MM/yyyy HH:mm:ss*
+    Time should be in format dd/MM/yyyy HH:mm:ss
 
 ## Endpoints usage with POSTMAN snaps.
 
@@ -23,7 +38,7 @@ https://zomsystem.herokuapp.com/showallrecords
 
 ### An endpoint to book a ticket using a user’s name, phone number, and timings.
 
-GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NEW_RECORD&nm=NAME&phonenumber=PHONENUMBER&time= dd/MM/yyyy HH:mm:ss
+**GET REQUEST** : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NEW_RECORD&nm=NAME&phonenumber=PHONENUMBER&time= dd/MM/yyyy HH:mm:ss
 
 ![automated testing](/Images/alter1.png)  
 
@@ -31,13 +46,13 @@ GET REQUEST : https://zomsystem.herokuapp.com/addRecord?uniqueid=UNIQUE_ID_OF_NE
     ‘created_at’ entry is automatically stored in database which stores the time when request to add a
     new record is generated
 
-Showing all records : https://zomsystem.herokuapp.com/showallrecords
+*Showing all records :* https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/alter2.png)  
 
     All records are displayed to denote the insertion of a record.
 
-POST REQUEST : 
+**POST REQUEST :** 
 
     import requests
     
@@ -52,7 +67,7 @@ POST REQUEST :
     We can send an automated POST request to the end point with a .txt file which contains records as 
     shown to add multiple records at a time easily through a POST request.
 
-Showing all inserted records using POST: https://zomsystem.herokuapp.com/showallrecords
+*Showing all inserted records using POST:* https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/alter4.png)  
 
@@ -76,7 +91,7 @@ https://zomsystem.herokuapp.com/updatetime?oldtime=PREVIOUS_OLD_TIME&newtime=UPD
 
     Here shown the endpoint that accepts a previous time and updated time, to update time entry.
 
-Showing all records: https://zomsystem.herokuapp.com/showallrecords
+*Showing all records:* https://zomsystem.herokuapp.com/showallrecords
 
 ![automated testing](/Images/alter21.png)  
 
