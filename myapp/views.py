@@ -82,75 +82,108 @@ def showallrecords(request):
 
 
 def timeinfo(request):
-    deleteTime()
-    text=request.GET['query']
-    test = Url.objects.get(time=text)
-    print (test.uid)
-    mydict = {
-            "unique_id" : test.uid,
-            "index" : test.index,
-            "name" : test.name,
-            "result" : test.result,
-            "time" : test.time,
-            "phone number" : test.pno,
-            "created_at" :test.created_at
-        }
-    response = JsonResponse(mydict)
-    return response      
+    try:
+        deleteTime()
+        text=request.GET['query']
+        test = Url.objects.get(time=text)
+        print (test.uid)
+        mydict = {
+                "unique_id" : test.uid,
+                "index" : test.index,
+                "name" : test.name,
+                "result" : test.result,
+                "time" : test.time,
+                "phone number" : test.pno,
+                "created_at" :test.created_at
+            }
+        response = JsonResponse(mydict)
+        return response      
+    except:
+        mydict = {
+                "status" : "Matching query does not exist",
+                "error code" : 500
+            }
+        response = JsonResponse(mydict)
+        return response      
 
 def updatetime(request):
-    deleteTime()
-    text=request.GET['oldtime']
-    text2=request.GET['newtime']
-    test = Url.objects.get(time=text)
-    print (test.uid)
+    try:
+        deleteTime()
+        text=request.GET['oldtime']
+        text2=request.GET['newtime']
+        test = Url.objects.get(time=text)
+        print (test.uid)
 
-    test.time=text2
-    test.save(update_fields=['time'])
-    test = Url.objects.get(time=text2)
+        test.time=text2
+        test.save(update_fields=['time'])
+        test = Url.objects.get(time=text2)
 
-    mydict = {
-            "unique_id" : test.uid,
-            "index" : test.index,
-            "name" : test.name,
-            "result" : test.result,
-            "time" : test.time,
-            "phone number" : test.pno,
-            "created_at" :test.created_at
-        }
-    response = JsonResponse(mydict)
-    return response       
+        mydict = {
+                "unique_id" : test.uid,
+                "index" : test.index,
+                "name" : test.name,
+                "result" : test.result,
+                "time" : test.time,
+                "phone number" : test.pno,
+                "created_at" :test.created_at
+            }
+        response = JsonResponse(mydict)
+        return response       
+    except:
+        mydict = {
+                "status" : "Matching query does not exist",
+                "error code" : 500
+            }
+        response = JsonResponse(mydict)
+        return response      
 
 def ticketinfo(request):
-    deleteTime()
-    text=request.GET['query']
-    test = Url.objects.get(uid=text)
-    print (test.uid)
-    mydict = {
-            "unique_id" : test.uid,
-            "index" : test.index,
-            "name" : test.name,
-            "result" : test.result,
-            "time" : test.time,
-            "phone number" : test.pno,
-            "created_at" :test.created_at
-        }
-    response = JsonResponse(mydict)
-    return response  
+    try:
+        deleteTime()
+        text=request.GET['query']
+        test = Url.objects.get(uid=text)
+        print (test.uid)
+        mydict = {
+                "unique_id" : test.uid,
+                "index" : test.index,
+                "name" : test.name,
+                "result" : test.result,
+                "time" : test.time,
+                "phone number" : test.pno,
+                "created_at" :test.created_at
+            }
+        response = JsonResponse(mydict)
+        return response  
+    except:
+        mydict = {
+                "status" : "Matching query does not exist",
+                "error code" : 500
+            }
+        response = JsonResponse(mydict)
+        return response  
+
 
 
 def deleteticket(request):
-    deleteTime()
-    text=request.GET['query']
-    test = Url.objects.get(uid=text)
-    print (test.uid)
-    test.delete()
-    mydict = {
-            "status" : "Record deleted successfully!",
-            "time of deletion" : str(datetime.datetime.now())
-        }
-    response = JsonResponse(mydict)
-    return response 
+    try:
+        deleteTime()
+        text=request.GET['query']
+        test = Url.objects.get(uid=text)
+        print (test.uid)
+        test.delete()
+        mydict = {
+                "status" : "Record deleted successfully!",
+                "time of deletion" : str(datetime.datetime.now())
+            }
+        response = JsonResponse(mydict)
+        return response 
+    except:
+        mydict = {
+                "status" : "Matching query does not exist",
+                "error code" : 500
+            }
+        response = JsonResponse(mydict)
+        return response      
 
 # Create your views here.
 
