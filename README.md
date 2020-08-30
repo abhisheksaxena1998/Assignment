@@ -4,6 +4,10 @@ https://zomsystem.herokuapp.com/
 
 ![automated testing](/Images/11.png)  
 
+**TECH STACK**
+
+Python, Django(Framework), Heroku (for deployment)
+
 ### Business cases supported by REST APIs:
 
     ● An endpoint to book a ticket using a user’s name, phone number, and timings.
