@@ -1,4 +1,4 @@
-## ZOMENTUM HIRING ASSIGNMENT (BACKEND)
+## MOVIE TICKET BOOKING SYSTEM USING REST APIs
 
 https://zomsystem.herokuapp.com/
 
