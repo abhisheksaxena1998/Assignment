@@ -37,11 +37,14 @@ def searchRec(request):
 
 def deleteTime():   # Function to delete all the tickets which are expired automatically.
     now = datetime.datetime.now()
+
     test = Url.objects.all()
     for i in test:
         print(i.time)
-        text = datetime.datetime.strptime(i.time, '%m/%d/%Y %H:%M:%S')
-        if (now-text).total_seconds()//3600 >= 8:
+        i_time = datetime.datetime.fromtimestamp(int(i.time))
+        print(i.time, i_time)
+        #text = datetime.datetime.strptime(i.time, '%m/%d/%Y %H:%M:%S')
+        if (now-i_time).total_seconds()//3600 >= 8:
             todel = Url.objects.get(uid=i.uid)
             todel.delete()
     mydict = {
@@ -282,7 +285,7 @@ def addRecord(request):
     result = "booked"
     uid = request.GET['uniqueid']
     pno = request.GET['phonenumber']
-    time = request.GET['time'][:-3]
+    time = request.GET['time']
     print(time)
     name = text
     count = 0
@@ -325,7 +328,7 @@ def result(request):
     result = "booked"
     uid = request.GET['uniqueid']
     pno = request.GET['phonenumber']
-    time = request.GET['time'][:-3]
+    time = request.GET['time']
     name = text
     # bookedat=str(datetime.datetime.now())
     obj = Url()
