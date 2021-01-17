@@ -41,7 +41,7 @@ def deleteTime():   # Function to delete all the tickets which are expired autom
     test = Url.objects.all()
     for i in test:
         print(i.time)
-        i_time = datetime.datetime.fromtimestamp(int(i.time))
+        i_time = datetime.datetime.fromtimestamp(int(i.time)//1000)
         print(i.time, i_time)
         #text = datetime.datetime.strptime(i.time, '%m/%d/%Y %H:%M:%S')
         if (now-i_time).total_seconds()//3600 >= 8:
