@@ -70,7 +70,7 @@ def listall(request):
             "name": i.name,
             "result": i.result,
             "time": i.time,
-            "phone number": i.pno,
+            "phone_number": i.pno,
             "created_at": i.created_at
         }
         array.append(d)
@@ -93,7 +93,7 @@ def showallrecords(request):
             "name": i.name,
             "result": i.result,
             "time": i.time,
-            "phone number": i.pno,
+            "phone_number": i.pno,
             "created_at": i.created_at
         }
         array.append(d)
@@ -114,7 +114,7 @@ def timeinfo(request):
             "name": test.name,
             "result": test.result,
             "time": test.time,
-            "phone number": test.pno,
+            "phone_number": test.pno,
             "created_at": test.created_at
         }
         response = JsonResponse(mydict)
@@ -146,7 +146,7 @@ def updatetime(request):
             "name": test.name,
             "result": test.result,
             "time": test.time,
-            "phone number": test.pno,
+            "phone_number": test.pno,
             "created_at": test.created_at
         }
         response = JsonResponse(mydict)
@@ -172,7 +172,7 @@ def ticketinfo(request):
             "name": test.name,
             "result": test.result,
             "time": test.time,
-            "phone number": test.pno,
+            "phone_number": test.pno,
             "created_at": test.created_at
         }
         response = JsonResponse(mydict)
