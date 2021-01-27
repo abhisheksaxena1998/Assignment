@@ -210,6 +210,14 @@ def deleteticket(request):
 # Create your views here.
 
 
+def signup(request):
+    status = False
+    if request.method == "POST":
+        status = True
+        print("Endpoint hit")
+    return status
+
+
 def automated_testing(request):
     deleteTime()
     import re
